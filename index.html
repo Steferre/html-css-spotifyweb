@@ -7,8 +7,7 @@
 
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
-    font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -20,6 +19,51 @@
         <!--contenitore aside + contenuto-->
         <div class="top_container">
             <aside class="bg_aside aside_size">
+                <div class="logo"><!--visibile sempre tranne in xs-->
+                    <img src="img/logo.svg" alt="logo spotify">
+                </div>
+                <div class="logo xs"><!--visibile solo in xs-->
+                    <img src="img/logo-small.svg" alt="logo spotify">
+                </div>
+                <div class="home"><!--visibile sempre tranne in xs-->
+                    <ul>
+                        <li><a href="#" class="txt_white"><span class="fa fa-home"></span> Home</a></li>
+                        <li><a href="#"><span class="fa fa-search"></span> Cerca</a></li>
+                        <li><a href="#"><span class="fa fa-book"></span> La tua libreria</a></li>
+                    </ul>
+                </div>
+                <div class="home xs"><!--visibile solo in xs-->
+                    <ul>
+                        <li><a href="#"><span class="fa fa-home"></span></a></li>
+                        <li><a href="#"><span class="fa fa-search"></span></a></li>
+                        <li><a href="#"><span class="fa fa-book"></span></a></li>
+                    </ul>
+                </div>
+                <div class="playlist">
+                    <h4 class="txt_white">
+                        PLAYLIST
+                    </h4>
+                    <ul>
+                        <li><a href="#"><span class="fa fa-plus-square big"></span> Crea Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>                    
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                    </ul>
+                </div>
+                <div class="user">
+                    <div class="download">
+                        <i class="fa fa-arrow-circle-down icon small"></i>
+                        <span>Installa app</span>
+                    </div>
+                    <div class="username">
+                        <i class="fa fa-user-circle icon big"></i>
+                        <span class="txt_white">John Doe</span>
+                    </div>
+                </div> 
             </aside>
             <article class="content">
                 <div class="upgrade_bar bg_upgrade_bar"></div>

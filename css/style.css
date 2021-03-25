@@ -2,7 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
 }
+
+.txt_white {
+    color: #FFFFFF;
+}
+
 .general_box {
     display: flex;
     flex-direction: column;
@@ -15,6 +21,7 @@
 .content {
     display: flex;
     flex-direction: column;
+    flex-grow: 1; 
 }
 
 /*colori background*/
@@ -30,22 +37,112 @@
 .bg_player_bar {
     background-color: #282828;
 }
-
+/*inizio sezione aside*/
 .aside_size {
-    width: 20vw;
+    width: 200px;
     height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
 }
+.logo > img {
+    height: 40px;
+    margin: 8px 0 8px 10px;
+}
+.home {
+    padding: 10px 0 10px 10px;
+}
+.playlist {
+    flex-grow: 1;
+    padding: 10px 0 10px 10px;
+    overflow: hidden;
+}
+.home > ul > li,
+.playlist > ul > li {
+    padding: 5px 0;
+}
+.home > ul > li > a > span {
+    font-size: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.home > ul > li > a,
+.playlist > ul > li > a {
+    text-decoration: none;
+    color: #676767;
+    font-weight: bold;
+}
+.home > ul > li > .txt_white {
+    color: #FFFFFF;
+}
+.user {
+    width: 100%;
+    padding: 10px;
+    color: #676767;
+}
+.download {
+    border-bottom: 1px solid grey;
+}
+.download, 
+.username {
+    padding: 5px 0;
+}
+.small {
+    font-size: 20px;   
+}
+.big {
+    font-size: 30px;
+    vertical-align: middle;
+}
+.logo.xs,
+.home.xs {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    .aside_size {
+        min-width: 50px;
+        width: 50px;
+    }
+    .logo,
+    .home {
+        display: none;
+    }
+    .logo.xs,
+    .home.xs {
+        display: inline-block;
+    }
+    .home.xs {
+        padding: 0 0 0 10px; 
+    }
+    .logo > img {
+        height: 30px;
+    }
+    .playlist {
+        visibility: collapse;
+    }
+    .download {
+        border: none;
+    }
+    .download > span,
+    .username > span {
+        display: none;
+    }
+    .icon {
+        visibility: visible;
+    }
+    .download > i {
+      margin: 0 6.5px;  
+    }
+}
+
+.upgrade_bar {
+    height: 60px;
+}
+
 .section_size {
-    width: 80vw;
     flex-grow: 1;
 }
 
 .player_size {
     width: 100vw;
     height: 80px;
-}
-
-.upgrade_bar {
-    width: 80vw;
-    height: 60px;
 }
