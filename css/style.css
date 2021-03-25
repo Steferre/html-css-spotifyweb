@@ -5,6 +5,20 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.my_clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.my_f_left {
+    float: left;
+}
+
+.my_f_right {
+    float: right;
+}
+
 .txt_white {
     color: #FFFFFF;
 }
@@ -133,10 +147,29 @@
       margin: 0 6.5px;  
     }
 }
-
+/*inizio sezione upgrade*/
 .upgrade_bar {
     height: 60px;
 }
+
+.my_btn {
+    margin: 12.5px 5px;
+    padding: 9px 20px;    
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 30px;
+}
+
+.my_btn > a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.my_btn > a:hover {
+    font-size: 16px;
+}
+
 
 .section_size {
     flex-grow: 1;
