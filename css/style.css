@@ -261,6 +261,36 @@
 }
 .disc_size {
     width: 100%;
+    position: relative;
+}
+
+.photo {
+    width: 100%;
+}
+
+.layover {
+    position: absolute;
+    width: 100%;
+    height: 98%;
+    background-color: rgba(0, 0, 0, 0.493);
+    top: 0;
+    left: 0;
+    display: none; 
+}
+.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-size: 50px;
+    display: none;
+}
+
+
+.disc_size:hover .layover,
+.disc_size:hover .play {
+    display: block;
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
     .disc_box {
@@ -336,12 +366,12 @@
    color: #FFFFFF;
    padding: 0 10px;
 }
-.btn_console > .play {
-    font-size: 30px;
+.btn_console > .play_fixed {
+    font-size: 35px;
 }
 
-.btn_console > .play:hover {
-    font-size: 35px;
+.btn_console > .play_fixed:hover {
+    font-size: 40px;
 }
 
 .song_time {
@@ -356,6 +386,7 @@
     margin: 0 5px;
     background-color: #5A5A5A;
     border-radius: 5px;
+    position: relative;
 }
 
 .time,
@@ -366,10 +397,25 @@
     border-radius: 5px;
 }
 
-.time:hover,
-.volume:hover {
+.dot_timer {
+    width: 15px;
+    height: 15px;
+    background-color: #C1C1C1;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 135px;
+    display: none;
+}
+
+.time_bar:hover .dot_timer {
+    display: block;
+}
+
+.time_bar:hover .time {
     background-color: #ADFF2F;
-} 
+}
+
 
 .options {
     flex-basis: 25%;
@@ -391,6 +437,26 @@
     background-color: #5A5A5A;
     border-radius: 5px;
     margin-right: 10px;
+    position: relative;
+}
+
+.dot_audio {
+    width: 15px;
+    height: 15px;
+    background-color: #C1C1C1;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 35px;
+    display: none;    
+}
+
+.volume_bar:hover .volume {
+    background-color: #ADFF2F;
+}
+
+.volume_bar:hover .dot_audio {
+    display: block;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
