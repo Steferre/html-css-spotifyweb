@@ -194,6 +194,8 @@
 }
 
 .my_btn {
+    color: #FFFFFF;
+    font-size: 12px;
     margin: 12.5px 5px;
     padding: 9px 20px;    
     background-color: transparent;
@@ -201,13 +203,7 @@
     border-radius: 30px;
 }
 
-.my_btn > a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.my_btn > a:hover {
+.my_btn:hover {
     font-size: 14px;
 }
 
@@ -268,6 +264,10 @@
     width: 100%;
 }
 
+.photo.round {
+    border-radius: 50%;
+}
+
 .layover {
     position: absolute;
     width: 100%;
@@ -277,6 +277,11 @@
     left: 0;
     display: none; 
 }
+
+.layover.round {
+    border-radius: 50%;
+}
+
 .play {
     position: absolute;
     top: 50%;
