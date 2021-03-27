@@ -40,6 +40,16 @@
     overflow-y: scroll;
 }
 
+/*zona modifica estetica scrollbar*/
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c8c8c81a;
+    border-radius: 6px;
+}
+
+
 /*colori background*/
 .bg_aside {
     background-color: #000000;
@@ -65,20 +75,24 @@
     margin: 8px 0 8px 10px;
 }
 .home {
-    padding: 10px 0 10px 10px;
+    padding: 0 0 10px 10px;
 }
 .playlist {
     flex-grow: 1;
     padding: 10px 0 10px 10px;
-    overflow: hidden;
+    overflow-y: scroll;
 }
-.home > ul > li,
-.playlist > ul > li {
+.home > ul > li {
     padding: 5px 0;
+    vertical-align: middle; 
 }
-.home > ul > li > a > span {
-    font-size: 30px;
-    margin-right: 5px;
+.playlist > ul > li {
+    padding: 10px 0;
+    vertical-align: middle;
+}
+.home > ul > li > a > img {
+    width: 25px;
+    height: 25px;
     vertical-align: middle;
 }
 .home > ul > li > a,
@@ -86,9 +100,17 @@
     text-decoration: none;
     color: #676767;
     font-weight: bold;
+    font-size: 14px;
 }
-.home > ul > li > .txt_white {
+
+.home > ul > li > a:hover,
+.playlist > ul > li > a:hover {
+    font-size: 15px;
     color: #FFFFFF;
+} 
+
+.home > ul > li > .txt_white {
+    color: #F8F8F8;
 }
 .user {
     width: 100%;
@@ -98,15 +120,24 @@
 .download {
     border-bottom: 1px solid grey;
 }
+
 .download, 
 .username {
     padding: 5px 0;
 }
+
+.download > span:hover {
+    color: #FFFFFF;
+}
 .small {
     font-size: 20px;   
 }
-.big {
+.medium {
     font-size: 30px;
+    vertical-align: middle;
+}
+.big {
+    font-size: 50px;
     vertical-align: middle;
 }
 .logo.xs,
@@ -130,10 +161,15 @@
         display: inline-block;
     }
     .home.xs {
-        padding: 0 0 0 10px; 
+        padding: 0 0 0 12.5px; 
     }
     .logo > img {
         height: 30px;
+    }
+    .home.xs > ul > li > img {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
     }
     .playlist {
         visibility: collapse;
@@ -172,10 +208,10 @@
 }
 
 .my_btn > a:hover {
-    font-size: 16px;
+    font-size: 14px;
 }
 
-
+/*zona dischi*/
 .section_size {
     flex-grow: 1;
 }
@@ -198,6 +234,9 @@
     font-weight: bold;
     font-size: 12px;
 }
+.ghost_navbar > ul > li > a:hover {
+    color: #FFFFFF;
+}
  
 .green_bar {
     width: 27px;
@@ -217,6 +256,8 @@
 .disc_box {
     width: calc(100% / 6);
     padding-right: 10px;
+    flex-shrink: 2;
+    text-align: center;
 }
 .disc_size {
     width: 100%;
@@ -253,14 +294,31 @@
 .name {
     flex-basis: 100px;
 }
+.name > h5 > strong > a,
+.name > h5 > small > a {
+    text-decoration: none;
+}
+
+.name > h5 > small > a:hover {
+    color: #FFFFFF;
+}
+
 .txt_grey {
     color: #7E7E7E; 
 }
-.favourites > i {
+
+.favourites > a > i {
     padding-right: 10px;
     color: #FFFFFF;
 }
 
+.favourites > a >.heart:hover {
+    color: red;
+}
+
+.favourites > a >.folder:hover {
+    color: lightskyblue;
+}
 
 .player {
     flex-basis: 50%;
@@ -268,6 +326,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.btn_console {
+    display: flex;
+    align-items: center;
 }
 .btn_console > i {
    font-size: 20px;
@@ -277,6 +339,11 @@
 .btn_console > .play {
     font-size: 30px;
 }
+
+.btn_console > .play:hover {
+    font-size: 35px;
+}
+
 .song_time {
     width: 100%;
     text-align: center;
@@ -299,13 +366,18 @@
     border-radius: 5px;
 }
 
+.time:hover,
+.volume:hover {
+    background-color: #ADFF2F;
+} 
+
 .options {
     flex-basis: 25%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.options > i {
+.options > a > i {
     font-size: 15px;
     color: #FFFFFF;
     vertical-align: middle;
@@ -314,9 +386,50 @@
 
 .volume_bar {
     display: inline-block;
-    width: 50%;
+    width: 40%;
     height: 5px;
     background-color: #5A5A5A;
     border-radius: 5px;
     margin-right: 10px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .song_name {
+        flex-basis: 30%;
+    }
+    .song_time {
+        width: 125%;
+    }
+    .time_bar {
+        width: 60%;
+    }
+    .player {
+        flex-basis: 40%;
+    }
+    .options {
+        flex-basis: 30%;
+    }
+    .options > a > i {
+        padding: 0 5px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 991px) {
+    .song_name {
+        flex-basis: 33%;
+    }
+    .song_time {
+        width: 150%;
+    }
+    .time_bar {
+        width: 40%;
+    }
+    .player {
+        flex-basis: 34%;
+    }
+    .options {
+        flex-basis: 33%;
+    }
+    .options > a > i {
+        padding: 0 2.5px;
+    }
 }
