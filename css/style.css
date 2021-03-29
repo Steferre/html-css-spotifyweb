@@ -69,6 +69,7 @@
     width: 200px;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 .logo > img {
     height: 40px;
@@ -89,7 +90,9 @@
 .playlist > ul > li {
     padding: 10px 0;
     vertical-align: middle;
+    overflow-y: scroll;
 }
+
 .home > ul > li > a > img {
     width: 25px;
     height: 25px;
