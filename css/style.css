@@ -42,7 +42,7 @@
 
 /*zona modifica estetica scrollbar*/
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 0;
 }
 ::-webkit-scrollbar-thumb {
     background: #c8c8c81a;
@@ -274,7 +274,7 @@
 .layover {
     position: absolute;
     width: 100%;
-    height: 98%;
+    height: calc(100% - 4px);
     background-color: rgba(0, 0, 0, 0.493);
     top: 0;
     left: 0;
